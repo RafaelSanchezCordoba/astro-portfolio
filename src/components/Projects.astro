@@ -1,0 +1,23 @@
+---
+import Data from '../assets/projects'
+import ProjectCard from './ProjectCard.astro';
+import { type Project } from '../assets/projects';
+
+const projects: Project[] = Data;
+---
+
+<h2 id="projects" class="text-4xl text-center mt-10 text-primary font-bold mb-10 uppercase">Projects</h2>
+<div class="grid md:grid-cols-2 gap-8">
+    {
+        projects.map((project: Project) => (
+            <ProjectCard 
+                name={project.name} 
+                description={project.description} 
+                stack={project.stack} 
+                sourceCode={project.sourceCode} 
+                liveDemo={project.liveDemo} 
+            />
+        ))
+    }
+
+</div>

@@ -1,0 +1,49 @@
+---
+interface Props {
+    name:        string;
+    description: string;
+    stack:       string[];
+    sourceCode:  string;
+    liveDemo:    string;
+}
+
+const { name, description, stack, sourceCode, liveDemo } = Astro.props;
+---
+
+<div class="flex flex-col gap-4 items-center bg-gray-800 py-6 rounded-lg shadow-2xl">
+    <h2 class="text-2xl text-secondary font-bold">{name}</h2>
+    <p class="text-md text-center">{description}</p>
+    {stack && (
+        <ul class="flex gap-2 text-xs text-secondary">
+            {stack.map((tech) => (
+                <li>{tech}</li>
+            ))}
+        </ul>
+    )}
+    <div class="flex text-primary">
+        {sourceCode && (
+            <a href={sourceCode} target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
+                    <path d="M8 11l0 5"></path>
+                    <path d="M8 8l0 .01"></path>
+                    <path d="M12 16l0 -5"></path>
+                    <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+                </svg>
+            </a>
+        )}
+
+        {liveDemo && (
+            <a href={liveDemo} target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-tabler" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M8 9l3 3l-3 3"></path>
+                    <path d="M13 15l3 0"></path>
+                    <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+                </svg>
+            </a>
+        )}
+    </div>
+
+</div>

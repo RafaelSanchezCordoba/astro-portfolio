@@ -1,4 +1,5 @@
 ---
+import Header from '../components/Header.astro';
 interface Props {
 	title: string;
 }
@@ -7,7 +8,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -17,12 +18,22 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="bg-gray-900 min-h-screen pb-32">
-		<main class="max-w-5xl px-4 m-auto">
+		<Header />
+		<main class="max-w-5xl px-10 md:px-4 m-auto">
 			<slot />
 		</main>
 	</body>
 </html>
 <style is:global>
+	/* :root {
+		--primary-bg-color: #23283e;
+		--secondary-bg-color: #1a1f4c;
+		--primary-fg-color: #bdbdbdbd;
+		--secondary-fg-color: #cdcdff;
+		--primary-color: #90a0d9;
+		--shadow:rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+		rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+	} */
 	html {
 		font-family: system-ui, sans-serif;
 		color-scheme: dark light;

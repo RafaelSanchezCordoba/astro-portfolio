@@ -1,0 +1,24 @@
+---
+const skills = [
+    'JavaScript',
+    'TypeScript',
+    'Java',
+    'Node.js',
+    'React',
+    'PostgreSQL',
+    'C#',
+    '.NET',
+    'Next.js',
+    'Express',
+    'MongoDB',
+]
+---
+
+<div id="skills" class="flex flex-col max-w-lg m-auto">
+    <h2 class="text-4xl text-center mt-10 text-primary font-bold mb-10 uppercase">Skills</h2>
+    <ul class="flex flex-wrap gap-5 justify-center">
+        {skills.map(skill => (
+            <li class="bg-gray-800 p-3 rounded-xl shadow-2xl text-sm">{skill}</li>
+        ))}
+    </ul>
+</div>
