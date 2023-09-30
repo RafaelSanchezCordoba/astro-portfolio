@@ -21,6 +21,13 @@ const projects = [
         sourceCode: 'https://github.com/RafaelSanchezCordoba/pokedex',
         liveDemo: 'https://rafaelsanchezcordoba.github.io/pokedex/'
     },
+    {
+        name: 'Summize',
+        description: 'Simplify your readig with Summize, an open-source article summarizer that trasnforms lengthy articles into clear and concice summaries.',
+        stack: ['JavaScript', 'React', 'Axios'],
+        sourceCode: 'https://github.com/RafaelSanchezCordoba/ai-summarizer',
+        liveDemo: 'https://ai-article-summarizer-rafasanchezcordoba.vercel.app/'
+    },
 ]
 
 export default projects;
